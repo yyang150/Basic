@@ -138,9 +138,32 @@ class BinarySearchTree{
 				return tree.right;
 			}else if(tree.right == null){
 				return tree.left;
-			}eles{
-				
+			}else{
+				if(tree.right.left == null){
+					tree.data = tree.right.data;
+					tree.right = tree.right.right;
+					return tree;
+				}else{
+					tree.data = removeSmallest(tree.right);
+					return tree;
+				}
 			}
+		}else if(tree.data.compareTo(elem) < 0){
+			tree.left = delete(tree.left, elem);
+			return tree;
+		}else{
+			tree.right = delete(tree.right, elem);
+			return tree;
+		}
+	}
+
+	private Comparable removeSmallest(BSTNode tree){
+		if(tree.left.left == null){
+			Comparable smallest = tree.left.data;
+			tree.left = tree.left.right;
+			return smallest;
+		}else{
+			return removeSmallest(tree.left);
 		}
 	}
 	
