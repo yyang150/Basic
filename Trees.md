@@ -1,6 +1,6 @@
 # Trees
 #### prerequisite
-> defination of tree-> single root/every node has only one parent(except root)/no cycles
+> definition of tree-> single root/every node has only one parent(except root)/no cycles
 ## Binary Search Trees
 
 1. 本质是需要一种adt for sorted list且这种adt提供有接口添加／删除／遍历／查找功能：
